@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baper Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white">
+    <!-- Login section -->
+    <section id="login" class="h-screen flex flex-col items-center justify-center gap-10">
+        <h1 class="text-4xl text-center text-gray-100 font-semibold">
+            Welcome! to
+            <span class="text-green-300 font-bold">BAPER BANK
+            </span>
+        </h1>
+
+        <form action="#" id="login-submit" class="bg-gray-900 flex p-6 rounded gap-3 flex-col lg:w-1/5 mx-auto">
+
+            <h5 class="text-1xl mb-2 text-center text-gray-100 font-bold">Log in your <span
+                    class="text-green-300 font-semibold">Baper Bank</span>
+            </h5>
+            <p id="warning" class="text-red-500 text-xs h-5 text-center"></p>
+            <input id="userName" placeholder="Username" class="p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 text-black rounded" type="text">
+            <input id="password" placeholder="Password" class="p-2 rounded text-black focus:outline-none focus:ring-2 focus:ring-blue-400" type="password">
+
+            <input
+                class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 cursor-pointer mx-auto w-fit mt-2"
+                type="submit" value="LOG IN">
+        </form>
+    </section>
+
+    <!-- Bank section -->
+    <section id="dashboard" class="mt-10 block lg:mt-24">
+        <h2 class="text-4xl text-center font-semibold my-8 mb-12">Welcome!! to
+            <span class="text-green-500 font-bold">BAPER BANK</span>
+        </h2>
+
+        <!-- Bank amount -->
+        <div class="row grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto text-white w-6/12 lg:w-9/12">
+            <div class="p-8 rounded-xl bg-green-500/75">
+                <h4 class="text-2xl">Deposite</h4>
+                <h2 class="text-4xl">$ <span id="deposite-output">0.0</span></h2>
+            </div>
+            <div class="p-8 rounded-xl bg-red-500/75">
+                <h4 class="text-2xl">Witddrow</h4>
+                <h2 class="text-4xl">$ <span id="withdraw-output">0.0</span></h2>
+            </div>
+            <div class="p-8 rounded-xl bg-yellow-500/75">
+                <h4 class="text-2xl">Balance</h4>
+                <h2 class="text-4xl">$ <span id="main-balance">3400</span></h2>
+            </div>
+        </div>
+
+
+        <!-- Bank debit credit -->
+        <div class="row mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5 mx-auto text-white w-6/12 lg:w-9/12">
+
+            <form action="#" id="deposite-submit" class="bg-gray-900 flex p-6 py-10 rounded-xl gap-2 flex-col">
+                <h5 class="text-2xl mb-2 text-gray-100 font-bold">Please Deposite</h5>
+                <input id="deposite-input" class="p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+                    placeholder="$ Add some money" type="text">
+                <input
+                    class="py-3 px-5 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 cursor-pointer w-fit mt-1"
+                    type="submit" value="Deposite">
+            </form>
+            <form action="#" id="withdraw-submit" class="bg-gray-900 flex p-6 py-10 rounded-xl gap-2 flex-col">
+                <h5 class="text-2xl mb-2 text-gray-100 font-bold">Please Withdraw</h5>
+                <input id="withdraw-input" class="p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+                    placeholder="$ Get some money" type="text">
+                <input
+                    class="py-3 px-5 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75 cursor-pointer w-fit mt-1"
+                    type="submit" value="Withdraw">
+            </form>
+        </div>
+    </section>
+
+    <!-- connet javascript file -->
+    <script src="index.js"></script>
+</body>
+
+</html>
