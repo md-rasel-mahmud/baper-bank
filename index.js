@@ -77,6 +77,9 @@
             if (isNaN(convrtDepoInput)) {
 
                 alert('The input value is not valid');
+
+                //delete input value
+                depositeInput.value = '';
             }else{
                 //step-5 Show Deposite Output
                 depositeOutput.innerText = convrtDepoInput + convrtDepoOutput;
@@ -112,6 +115,9 @@
             if (isNaN(convrtWthdrawInput)) {
 
                 alert('The input value is not valid');
+                
+                //delete input value
+                withdrowInput.value = '';
             }else{
 
                 if (convrtWthdrawInput>wthdrawMainBalance) {
