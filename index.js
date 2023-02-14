@@ -64,7 +64,6 @@
         //step-2 Event for Deposite Button
         depositeSubmit.addEventListener('submit', function (e) {
             e.preventDefault()
-
             //step-3 Select Deposite Input and convert it to Number
             const depositeInput = document.getElementById('deposite-input');
             const convrtDepoInput = parseFloat(depositeInput.value);
@@ -73,15 +72,22 @@
             const depositeOutput = document.getElementById('deposite-output');
             const convrtDepoOutput = parseFloat(depositeOutput.innerText)
             
-            //step-5 Show Deposite Output
-            depositeOutput.innerText = convrtDepoInput + convrtDepoOutput;
-
-            //step-6 Update main Balance and reset input value
-            const depoMainBalance = parseFloat(mainBalance.innerText);
-            mainBalance.innerText = depoMainBalance + convrtDepoInput;
-
             
-            depositeInput.value = '';
+            // validation input data type
+            if (isNaN(convrtDepoInput)) {
+
+                alert('The input value is not valid');
+            }else{
+                //step-5 Show Deposite Output
+                depositeOutput.innerText = convrtDepoInput + convrtDepoOutput;
+
+                //step-6 Update main Balance and reset input value
+                const depoMainBalance = parseFloat(mainBalance.innerText);
+                mainBalance.innerText = depoMainBalance + convrtDepoInput;
+
+                depositeInput.value = '';
+            }
+
         })
 
     //select withdraw submit button
@@ -100,14 +106,29 @@
 
             
             const wthdrawMainBalance = parseFloat(mainBalance.innerText);
-            if (convrtWthdrawInput>wthdrawMainBalance) {
-                alert('Sorry! Insufficient Balance');
+
+            console.log()
+            // validation input data type
+            if (isNaN(convrtWthdrawInput)) {
+
+                alert('The input value is not valid');
             }else{
-                //step-9 Show Withdraw Output
-                withdrawOutput.innerText = convrtWthdrawInput + convrtWthdrawOutput;
-                
-                //step-10 Update main Balance and reset input value
-                mainBalance.innerText = wthdrawMainBalance - convrtWthdrawInput;
+
+                if (convrtWthdrawInput>wthdrawMainBalance) {
+                    alert('Sorry! Insufficient Balance');
+                }else{
+                    //step-9 Show Withdraw Output
+                    withdrawOutput.innerText = convrtWthdrawInput + convrtWthdrawOutput;
+                    
+                    //step-10 Update main Balance and reset input value
+                    mainBalance.innerText = wthdrawMainBalance - convrtWthdrawInput;
+
+                    //delete input value
+                    withdrowInput.value = '';
+                }
             }
-            withdrowInput.value = '';
+            
+
+            
         })
+
