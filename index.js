@@ -19,7 +19,7 @@
         const password = document.getElementById('password');
 
         //step-3
-        if (userName.value === 'admin' && password.value === 'admin') {
+        if (userName.value === 'baper@bank.com' && password.value === 'secret') {
             //Select login page and dashboard page
             const login = document.getElementById('login');
             const dashboard = document.getElementById('dashboard');
