@@ -19,12 +19,15 @@
         const password = document.getElementById('password');
 
         //step-3
-        if (userName.value === 'baper@bank.com' && password.value === 'secret') {
+        if (userName.value === 'admin' && password.value === 'admin') {
             //Select login page and dashboard page
             const login = document.getElementById('login');
             const dashboard = document.getElementById('dashboard');
 
+            login.classList.remove('flex')
             login.classList.add('hidden');
+
+            dashboard.classList.remove('hidden')
             dashboard.classList.add('block')
         } else {
             document.getElementById('warning').innerText = '⚠ Invalid Username or Password '
@@ -76,6 +79,8 @@
             //step-6 Update main Balance and reset input value
             const depoMainBalance = parseFloat(mainBalance.innerText);
             mainBalance.innerText = depoMainBalance + convrtDepoInput;
+
+            
             depositeInput.value = '';
         })
 
